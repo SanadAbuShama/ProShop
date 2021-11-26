@@ -63,7 +63,6 @@ const ProductScreen = () => {
 
   const submitReviewHandler = (e) => {
     e.preventDefault();
-    dispatch({ type: PRODUCT_CREATE_REVIEW_RESET });
     dispatch(
       createProductReview(id, {
         rating,

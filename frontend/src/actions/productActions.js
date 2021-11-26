@@ -22,6 +22,7 @@ import {
   PRODUCT_TOP_REQUEST,
   PRODUCT_TOP_SUCCESS,
   PRODUCT_TOP_FAIL,
+  PRODUCT_CREATE_REVIEW_RESET,
 } from "../constants/productConstants";
 
 export const listProducts =
@@ -52,6 +53,7 @@ export const listProductDetails = (id) => async (dispatch) => {
     const { data } = await axios.get(`/api/products/${id}`);
 
     dispatch({ type: PRODUCT_DETAILS_SUCCESS, payload: data });
+    dispatch({ type: PRODUCT_CREATE_REVIEW_RESET });
   } catch (error) {
     dispatch({
       type: PRODUCT_DETAILS_FAIL,
